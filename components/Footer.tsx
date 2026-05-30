@@ -6,7 +6,7 @@ const COLS = [
     links: [
       ["Failure discovery", "#instrument"],
       ["Sim-to-real scoring", "#risk"],
-      ["Curriculum export", "#curriculum"],
+      ["Curriculum export", "#instrument"],
       ["MVP plan", "#mvp"],
     ],
   },

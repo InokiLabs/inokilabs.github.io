@@ -24,7 +24,7 @@ export function CTA() {
 
   return (
     <section id="pilot" className="section s-dark grid-bg">
-      <span className="section-index">10 / pilot</span>
+      <span className="section-index">09 / pilot</span>
       <div className="wrap">
         <div className="cta-grid">
           <div>

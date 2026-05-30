@@ -58,7 +58,7 @@ function BeforeAfter() {
 export function MVP() {
   return (
     <section id="mvp" className="section s-pearl grid-bg">
-      <span className="section-index">07 / mvp</span>
+      <span className="section-index">06 / mvp</span>
       <div className="wrap">
         <div className="head-block">
           <Reveal>

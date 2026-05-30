@@ -9,7 +9,7 @@ const PRINCIPLES = [
 export function Company() {
   return (
     <section id="company" className="section s-graphite grid-bg">
-      <span className="section-index">09 / company</span>
+      <span className="section-index">08 / company</span>
       <div className="wrap">
         <Reveal>
           <span className="eyebrow">Inoki Labs</span>

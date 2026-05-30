@@ -24,7 +24,7 @@ const CARDS = [
 export function Platform() {
   return (
     <section id="platform" className="section s-dark grid-bg">
-      <span className="section-index">08 / platform</span>
+      <span className="section-index">07 / platform</span>
       <div className="wrap">
         <div className="head-block">
           <Reveal>
