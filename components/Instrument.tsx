@@ -54,7 +54,7 @@ export function Instrument() {
   const [tab, setTab] = useState<TabId>("discovery");
 
   return (
-    <section id="instrument" className="section s-dark grid-bg">
+    <section id="instrument" className="section s-pearl grid-bg">
       <span className="section-index">04 / product</span>
       <div className="wrap">
         <div className="head-block">

@@ -8,7 +8,7 @@ const PRINCIPLES = [
 
 export function Company() {
   return (
-    <section id="company" className="section s-graphite grid-bg">
+    <section id="company" className="section s-pearl grid-bg">
       <span className="section-index">08 / company</span>
       <div className="wrap">
         <Reveal>
@@ -33,11 +33,11 @@ export function Company() {
           {PRINCIPLES.map(([h, p], i) => (
             <Reveal key={h} delay={0.05 + i * 0.06}>
               <div>
-                <div className="num" style={{ color: "var(--silver)", fontSize: 12, marginBottom: 14 }}>
+                <div className="num" style={{ color: "rgba(5,5,5,0.45)", fontSize: 12, marginBottom: 14 }}>
                   {String(i + 1).padStart(2, "0")}
                 </div>
                 <h3 style={{ fontSize: 21, marginBottom: 12 }}>{h}</h3>
-                <p style={{ color: "var(--silver)", fontSize: 15 }}>{p}</p>
+                <p style={{ color: "rgba(5,5,5,0.6)", fontSize: 15 }}>{p}</p>
               </div>
             </Reveal>
           ))}

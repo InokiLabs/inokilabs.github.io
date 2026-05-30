@@ -55,7 +55,7 @@ export function SimToReal() {
   const [focus, setFocus] = useState<Sim>("MuJoCo MJX");
 
   return (
-    <section id="risk" className="section s-pearl grid-bg">
+    <section id="risk" className="section s-dark grid-bg">
       <span className="section-index">05 / sim-to-real</span>
       <div className="wrap">
         <div className="head-block">
@@ -74,6 +74,7 @@ export function SimToReal() {
           </Reveal>
         </div>
 
+        <div className="cal-sheet">
         <Reveal delay={0.05}>
           <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 22, flexWrap: "wrap" }}>
             <span className="tag" style={{ textTransform: "uppercase", letterSpacing: "0.18em" }}>
@@ -127,8 +128,9 @@ export function SimToReal() {
             </table>
           </div>
         </Reveal>
+        </div>
         <Reveal delay={0.1}>
-          <p className="form-note" style={{ color: "rgba(5,5,5,0.5)", marginTop: 18 }}>
+          <p className="form-note" style={{ color: "var(--silver)", marginTop: 18 }}>
             Every report ships simulator version, policy version, seed strategy and parameter
             envelope. Risk scores state whether real-world calibration was used.
           </p>

@@ -852,9 +852,10 @@ p {
    ========================================================================= */
 
 .instrument {
-  border: 1px solid var(--line-mid);
+  /* self-contained dark telemetry panel — sits on the light section */
+  border: 1px solid var(--carbon-gray);
   border-radius: var(--radius);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent);
+  background: var(--graphite);
   overflow: hidden;
 }
 .instrument-bar {
@@ -997,6 +998,14 @@ p {
 /* =========================================================================
    Sim-to-real matrix (calibration sheet)
    ========================================================================= */
+
+/* white calibration sheet that carries the matrix on the dark section */
+.cal-sheet {
+  background: var(--ceramic-white);
+  border: 1px solid var(--silver);
+  border-radius: var(--radius);
+  padding: clamp(20px, 2.6vw, 32px);
+}
 
 .seg {
   display: inline-flex;
