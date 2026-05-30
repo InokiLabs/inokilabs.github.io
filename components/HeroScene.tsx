@@ -35,7 +35,7 @@ export function HeroScene() {
       viewBox="0 0 1200 720"
       className="hero-svg"
       role="img"
-      aria-label="Blueprint of a quadruped robot crossing stepped terrain, annotated with joint markers, a failure-boundary contour and parameter ticks."
+      aria-label="Blueprint terrain field: topographic contours and a stepped terrain profile annotated with a failure-boundary contour and parameter axes."
       preserveAspectRatio="xMidYMid meet"
     >
       <defs>
@@ -117,49 +117,6 @@ export function HeroScene() {
         <text x="124" y="292" fill="#bfc3c9" fontFamily="var(--font-mono)" fontSize="12" opacity="0.8">
           failure boundary
         </text>
-      </motion.g>
-
-      {/* ---- Quadruped (orthographic side view) ---- */}
-      <motion.g {...fade(0.9)} stroke="#f4f2ec" fill="none" strokeWidth="1.5">
-        {/* far legs (dimmer) */}
-        <g opacity="0.4" strokeWidth="1.2">
-          <path d="M512 470 L 506 520 L 520 548" />
-          <path d="M648 470 L 660 520 L 648 540" />
-        </g>
-
-        {/* torso */}
-        <path d="M470 432 q -8 -34 34 -36 l 150 0 q 30 0 40 22 l 8 18 q 4 14 -10 16 l -208 0 q -18 -2 -14 -36 Z" />
-        {/* head / sensor block */}
-        <path d="M652 418 l 44 -2 q 18 0 18 16 l 0 18 q 0 12 -16 12 l -36 0" />
-        <circle cx="700" cy="438" r="3.4" fill="#bfc3c9" stroke="none" />
-        <path d="M704 430 L 726 422" stroke="#bfc3c9" strokeWidth="1" />
-
-        {/* near front leg */}
-        <path d="M626 466 L 636 512 L 624 548" />
-        {/* near rear leg */}
-        <path d="M494 466 L 484 512 L 498 548" />
-
-        {/* joint markers */}
-        <g fill="#050505" stroke="#f4f2ec" strokeWidth="1.4">
-          <circle cx="626" cy="466" r="4.5" />
-          <circle cx="636" cy="512" r="4" />
-          <circle cx="494" cy="466" r="4.5" />
-          <circle cx="484" cy="512" r="4" />
-        </g>
-      </motion.g>
-
-      {/* joint / contact labels */}
-      <motion.g {...fade(1.8)} fontFamily="var(--font-mono)" fontSize="12" fill="#bfc3c9">
-        <path d="M636 512 L 690 512" stroke="#bfc3c9" strokeWidth="0.8" opacity="0.6" />
-        <text x="696" y="516">knee · θ2</text>
-        <path d="M626 466 L 690 466" stroke="#bfc3c9" strokeWidth="0.8" opacity="0.6" />
-        <text x="696" y="470">hip · θ1</text>
-        {/* contact markers */}
-        <g stroke="#d8a034" strokeWidth="1.3">
-          <path d="M618 548 L 630 548 M624 542 L 624 554" />
-          <path d="M492 548 L 504 548 M498 542 L 498 554" />
-        </g>
-        <text x="470" y="572" fill="#d8a034">contact · μ=0.28</text>
       </motion.g>
 
       {/* parameter axis ticks bottom-left */}

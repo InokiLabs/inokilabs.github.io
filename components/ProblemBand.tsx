@@ -13,8 +13,6 @@ const CASES = [
         {[...Array(7)].map((_, i) => (
           <path key={i} d={`M${130 + i * 12} 78 l 6 -10`} stroke="#bfc3c9" strokeWidth="1" />
         ))}
-        <circle cx="150" cy="54" r="5" stroke="#050505" strokeWidth="1.4" />
-        <path d="M150 54 L 168 70" stroke="#050505" strokeWidth="1.2" />
         <text x="6" y="20" fill="#d34b4b" fontFamily="var(--font-mono)" fontSize="11">
           μ ↓ → slip
         </text>
@@ -30,8 +28,6 @@ const CASES = [
       <svg viewBox="0 0 220 96" fill="none" aria-hidden="true" width="100%" height="100%">
         <path d="M0 78 L 110 78 L 110 44 L 220 44" stroke="#050505" strokeWidth="1.4" />
         <path d="M96 44 L 96 78 M90 44 L 102 44 M90 78 L 102 78" stroke="#d8a034" strokeWidth="1" />
-        <circle cx="128" cy="30" r="5" stroke="#050505" strokeWidth="1.4" />
-        <path d="M128 30 L 116 46 M128 30 L 138 48" stroke="#050505" strokeWidth="1.2" />
         <text x="6" y="20" fill="#d8a034" fontFamily="var(--font-mono)" fontSize="11">
           clearance margin
         </text>
@@ -51,8 +47,8 @@ const CASES = [
         <text x="6" y="18" fill="#d34b4b" fontFamily="var(--font-mono)" fontSize="11">
           command
         </text>
-        <text x="150" y="92" fill="#050505" fontFamily="var(--font-mono)" fontSize="11" opacity="0.6">
-          response (lagged)
+        <text x="120" y="92" fill="#050505" fontFamily="var(--font-mono)" fontSize="11" opacity="0.6">
+          response
         </text>
       </svg>
     ),
