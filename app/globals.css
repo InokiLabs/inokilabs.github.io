@@ -494,6 +494,15 @@ p {
     display: none;
   }
 }
+@media (max-width: 760px) {
+  /* roomier tap targets on touch devices */
+  .footer-col a {
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 4px;
+  }
+}
 @media (max-width: 560px) {
   .nav {
     padding: 12px var(--gutter);
@@ -961,7 +970,8 @@ p {
   font-family: var(--font-mono);
   font-size: 12px;
   letter-spacing: 0.08em;
-  padding: 10px 16px;
+  padding: 12px 16px;
+  min-height: 44px;
   cursor: pointer;
   transition: color 0.3s, background 0.3s;
 }
@@ -1321,6 +1331,33 @@ p {
   50% {
     opacity: 0;
   }
+}
+
+/* =========================================================================
+   Keyboard focus — visible ring on every interactive control.
+   Form fields intentionally clear the default outline on mouse :focus; this
+   restores a strong ring for keyboard users (:focus-visible).
+   ========================================================================= */
+
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible,
+.nav-link:focus-visible,
+.instrument-tab:focus-visible,
+.seg button:focus-visible,
+.field input:focus-visible,
+.field select:focus-visible,
+.field textarea:focus-visible {
+  outline: 2px solid var(--silver);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+.s-pearl a:focus-visible,
+.s-pearl button:focus-visible,
+.s-pearl .field input:focus-visible,
+.s-pearl .field select:focus-visible,
+.seg button:focus-visible {
+  outline-color: var(--ink-black);
 }
 
 /* Visually-hidden, still available to screen readers */
