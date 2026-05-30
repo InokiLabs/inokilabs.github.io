@@ -35,7 +35,7 @@ export function HeroScene() {
       viewBox="0 0 1200 720"
       className="hero-svg"
       role="img"
-      aria-label="Blueprint terrain field: topographic contours and a stepped terrain profile annotated with a failure-boundary contour and parameter axes."
+      aria-label="Blueprint terrain field: topographic contours and a stepped terrain profile annotated with parameter axes."
       preserveAspectRatio="xMidYMid meet"
     >
       <defs>
@@ -89,33 +89,6 @@ export function HeroScene() {
         <path d="M719 484 L 729 484 M719 540 L 729 540" />
         <text x="734" y="516" fill="#bfc3c9" fontFamily="var(--font-mono)" fontSize="13">
           step_height = 0.28 m
-        </text>
-      </motion.g>
-
-      {/* ---- Failure-boundary trace (isoline) with a break point ---- */}
-      <motion.path
-        d="M120 300 C 320 300, 360 250, 540 250 C 720 250, 760 360, 1080 330"
-        fill="none"
-        stroke="#d34b4b"
-        strokeWidth="1.4"
-        strokeDasharray="6 5"
-        opacity="0.85"
-        {...(reduce
-          ? {}
-          : {
-              initial: { pathLength: 0, opacity: 0 },
-              animate: { pathLength: 1, opacity: 0.85 },
-              transition: { duration: 1.8, delay: 1.1, ease: [0.16, 1, 0.3, 1] as const },
-            })}
-      />
-      <motion.g {...fade(2.4)}>
-        <circle cx="640" cy="293" r="6" fill="none" stroke="#d34b4b" strokeWidth="1.4" />
-        <circle cx="640" cy="293" r="2" fill="#d34b4b" />
-        <text x="654" y="289" fill="#d34b4b" fontFamily="var(--font-mono)" fontSize="13">
-          break_point · cluster_03
-        </text>
-        <text x="124" y="292" fill="#bfc3c9" fontFamily="var(--font-mono)" fontSize="12" opacity="0.8">
-          failure boundary
         </text>
       </motion.g>
 

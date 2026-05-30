@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { Reveal } from "./Reveal";
-import { FailureHeatmap } from "./FailureHeatmap";
 import { Terminal } from "./Terminal";
 
 type TabId = "discovery" | "risk" | "curriculum";
@@ -99,15 +98,9 @@ export function Instrument() {
             {tab === "discovery" && (
               <div className="instrument-body" role="tabpanel" id="panel-discovery" aria-labelledby="tab-discovery">
                 <div className="instrument-stage">
-                  <span className="tag" style={{ position: "absolute", top: 18, right: 20 }}>
-                    10,000 variants · 7 modes
+                  <span className="tag" style={{ display: "block", marginBottom: 10 }}>
+                    discovered failure clusters
                   </span>
-                  <div style={{ height: "100%", minHeight: 320 }}>
-                    <FailureHeatmap />
-                  </div>
-                </div>
-                <div className="instrument-side">
-                  <span className="tag">discovered clusters</span>
                   {CLUSTERS.map((c) => (
                     <div key={c.id} className="cluster-row">
                       <div>
@@ -123,6 +116,39 @@ export function Instrument() {
                       </div>
                     </div>
                   ))}
+                </div>
+                <div className="instrument-side">
+                  <span className="tag">run summary</span>
+                  <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "grid", gap: 0 }}>
+                    {[
+                      ["10,000", "variants evaluated"],
+                      ["7", "failure modes found"],
+                      ["3", "high-priority clusters"],
+                    ].map(([v, l], i) => (
+                      <li
+                        key={l}
+                        style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                          alignItems: "baseline",
+                          padding: "14px 0",
+                          borderBottom: i < 2 ? "1px solid var(--line-dim)" : "none",
+                        }}
+                      >
+                        <span
+                          className="num"
+                          style={{ fontFamily: "var(--font-display)", fontSize: 30, color: "var(--ceramic-white)" }}
+                        >
+                          {v}
+                        </span>
+                        <span className="tag">{l}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="tag" style={{ lineHeight: 1.6, marginTop: 6 }}>
+                    Each cluster carries its parameter signature, severity, and example
+                    rollouts. Risk tiers come from the scoring surface.
+                  </p>
                 </div>
               </div>
             )}
