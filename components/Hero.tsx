@@ -32,9 +32,7 @@ export function Hero() {
         >
           <span className="eyebrow">Adversarial simulation · physical AI reliability</span>
 
-          <h1 className="h-display hero-title">
-            Break<span className="hero-title-accent">Point</span>
-          </h1>
+          <h1 className="h-display hero-title">BreakPoint</h1>
 
           <p className="hero-headline">
             Find the edge cases before the robot does.

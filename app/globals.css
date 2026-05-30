@@ -28,7 +28,7 @@
   --ink-line: rgba(5, 5, 5, 0.16);
   --ink-line-mid: rgba(5, 5, 5, 0.32);
 
-  /* --- Pearlescent sheen (iridescent, restrained) --- */
+  /* --- Pearlescent sheen (iridescent, restrained) — borders & hairlines --- */
   --pearl-sheen: linear-gradient(
     115deg,
     #ffffff 0%,
@@ -37,6 +37,22 @@
     #ffffff 52%,
     #efd6ec 64%,
     #c9ccd2 82%,
+    #ffffff 100%
+  );
+
+  /* --- Holographic foil (brighter pop) — emphasis text & active accents.
+     High-key: white between each hue so it reads as glossy iridescent foil
+     (Printstream), not a flat rainbow or purple gradient. --- */
+  --holo: linear-gradient(
+    110deg,
+    #ffffff 0%,
+    #8fe9ff 13%,
+    #c8ffe8 25%,
+    #ffffff 38%,
+    #ffe0a3 50%,
+    #ff9fd6 62%,
+    #b9b0ff 74%,
+    #9fefff 86%,
     #ffffff 100%
   );
 
@@ -239,6 +255,32 @@ p {
 .h-section {
   font-size: clamp(30px, 4.6vw, 58px);
   font-weight: 600;
+}
+
+/* =========================================================================
+   Holographic foil emphasis (Printstream pop)
+   Applied to dark-section headings and anything tagged .holo. High-key
+   gradient reads as glossy iridescent foil. Light (pearl) sections keep
+   stark ink headings for contrast rhythm.
+   ========================================================================= */
+.holo,
+.s-dark .h-section,
+.s-graphite .h-section {
+  background: var(--holo);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: holo-pan 9s linear infinite;
+}
+@keyframes holo-pan {
+  from {
+    background-position: 0% 50%;
+  }
+  to {
+    background-position: 200% 50%;
+  }
 }
 
 /* =========================================================================
@@ -612,15 +654,15 @@ p {
 .hero-title {
   margin-top: 24px;
   text-transform: uppercase;
-}
-.hero-title-accent {
-  position: relative;
-  background: var(--pearl-sheen);
+  background: var(--holo);
   background-size: 200% 100%;
   -webkit-background-clip: text;
   background-clip: text;
+  -webkit-text-fill-color: transparent;
   color: transparent;
-  animation: sheen-pan 7s linear infinite;
+  animation: holo-pan 6.5s linear infinite;
+  /* soft iridescent glow for the bright pop */
+  filter: drop-shadow(0 1px 14px rgba(150, 228, 255, 0.22));
 }
 .hero-headline {
   font-family: var(--font-display);
@@ -847,9 +889,9 @@ p {
   right: 0;
   bottom: -1px;
   height: 2px;
-  background: var(--pearl-sheen);
+  background: var(--holo);
   background-size: 200% 100%;
-  animation: sheen-pan 3s linear infinite;
+  animation: holo-pan 4s linear infinite;
 }
 .instrument-meta {
   margin-left: auto;
@@ -947,8 +989,9 @@ p {
 .score-bar > span {
   position: absolute;
   inset: 0 auto 0 0;
-  background: var(--pearl-sheen);
+  background: var(--holo);
   background-size: 200% 100%;
+  animation: holo-pan 9s linear infinite;
 }
 
 /* =========================================================================
