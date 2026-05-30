@@ -858,6 +858,10 @@ p {
   background: var(--graphite);
   overflow: hidden;
 }
+/* the panel is dark even though the section is light — keep its labels light */
+.s-pearl .instrument .tag {
+  color: var(--silver);
+}
 .instrument-bar {
   display: flex;
   align-items: stretch;
@@ -1005,6 +1009,10 @@ p {
   border: 1px solid var(--silver);
   border-radius: var(--radius);
   padding: clamp(20px, 2.6vw, 32px);
+}
+/* the sheet is light even though the section is dark — keep its labels ink */
+.cal-sheet .tag {
+  color: rgba(5, 5, 5, 0.55);
 }
 
 .seg {
