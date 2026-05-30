@@ -40,10 +40,12 @@
     #ffffff 100%
   );
 
-  /* --- Typography --- */
-  --font-display: var(--font-display), "Saira Condensed", sans-serif;
-  --font-body: var(--font-body), "Saira", system-ui, sans-serif;
-  --font-mono: var(--font-mono), "IBM Plex Mono", monospace;
+  /* --- Typography ---
+     --font-display / --font-body / --font-mono are injected on <html> by
+     next/font (Saira Condensed / Saira / IBM Plex Mono), each with a metric
+     matched fallback face. Do NOT redefine them here — referencing a custom
+     property by its own name creates a cycle that resolves to empty and drops
+     the page to the serif default. Generic fallbacks live at the usage sites. */
 
   /* --- Motion --- */
   --ease-instrument: cubic-bezier(0.16, 1, 0.3, 1);
@@ -70,7 +72,7 @@ body {
   margin: 0;
   background: var(--ink-black);
   color: var(--pearl-white);
-  font-family: var(--font-body);
+  font-family: var(--font-body), system-ui, "Segoe UI", sans-serif;
   font-weight: 300;
   font-size: 17px;
   line-height: 1.6;
@@ -94,7 +96,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: var(--font-display);
+  font-family: var(--font-display), "Arial Narrow", system-ui, sans-serif;
   font-weight: 600;
   line-height: 1.02;
   letter-spacing: -0.01em;
